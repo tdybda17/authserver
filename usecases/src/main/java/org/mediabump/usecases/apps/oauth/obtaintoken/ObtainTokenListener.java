@@ -1,4 +1,4 @@
-package org.mediabump.usecases.usecases.obtaintoken;
+package org.mediabump.usecases.apps.oauth.obtaintoken;
 
 import org.mediabump.usecases.listener.ValidationErrorListener;
 

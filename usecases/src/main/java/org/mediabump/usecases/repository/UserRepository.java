@@ -7,4 +7,5 @@ public interface UserRepository {
     User delete(User user);
     User delete(String id);
     User get(String id);
+    User get(String email, boolean withSession);
 }

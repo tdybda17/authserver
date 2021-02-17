@@ -1,4 +1,4 @@
-package org.mediabump.usecases.usecases.obtaintoken;
+package org.mediabump.usecases.apps.oauth.obtaintoken;
 
 import org.mediabump.auth.domain.models.GrantType;
 import org.mediabump.usecases.repository.ClientRepository;
@@ -37,5 +37,6 @@ public class ObtainTokenUseCase {
         }
 
         GrantType grantType = GrantType.from(request.getGrantType());
+
     }
 }
