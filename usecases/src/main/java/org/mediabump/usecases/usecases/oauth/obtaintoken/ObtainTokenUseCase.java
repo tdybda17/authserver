@@ -1,4 +1,4 @@
-package org.mediabump.usecases.apps.oauth.obtaintoken;
+package org.mediabump.usecases.usecases.oauth.obtaintoken;
 
 import org.mediabump.auth.domain.models.GrantType;
 import org.mediabump.usecases.repository.ClientRepository;

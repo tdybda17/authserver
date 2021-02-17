@@ -1,4 +1,4 @@
-package org.mediabump.usecases.apps.internal.login;
+package org.mediabump.usecases.usecases.internal.login;
 
 import org.mediabump.usecases.request.Request;
 import org.mediabump.usecases.request.ValidationException;
