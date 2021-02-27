@@ -1,10 +1,12 @@
 package org.mediabump.auth.domain.models;
 
 import org.mediabump.auth.domain.tools.password.algorithms.HashAlgorithm;
+import org.mediabump.auth.domain.tools.password.algorithms.PBKDF2;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
+import java.util.IllegalFormatException;
 import java.util.List;
 
 public class Password {
@@ -20,7 +22,15 @@ public class Password {
      * @param password
      */
     public Password(String password) {
-        List<String> split = Arrays.asList(password.split("\\s*$\\s*"));
+        List<String> split = Arrays.asList(password.split("\\$"));
+        if (split.size() == 4) {
+            this.hash = split.get(3);
+            this.salt = split.get(2);
+            this.algorithm = new PBKDF2();
+            this.iterations = Integer.parseInt(split.get(1));
+        } else {
+            throw new IllegalArgumentException("Cannot split password string. s.split('$').size() should be 4");
+        }
     }
 
     public Password(String hash, String salt, HashAlgorithm algorithm, int iterations) {

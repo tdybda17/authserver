@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>login page</title>
 </head>
 <body>
-<h1>Login to continue</h1>
+<h1>Provide login credentials</h1>
+<div th:switch="${error}" class="ui-state-error">
+    <p th:case="*" th:text="${error}"></p>
+</div>
 <form method="post">
     <label for="id_email">E-mail</label>
-    <input type="text" name="email" required id="id_email"/>
+    <input type="text" name="email" value="admin@admin.com" required id="id_email"/>
     <label for="id_password">Password</label>
-    <input type="password" name="password" required id="id_password">
+    <input type="password" value="admin" name="password" required id="id_password">
     <input name="submit" type="submit" value="login">
 </form>
 </body>

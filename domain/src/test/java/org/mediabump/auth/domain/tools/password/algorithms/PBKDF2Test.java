@@ -27,4 +27,5 @@ class PBKDF2Test {
         assertEquals(148, password.encode().length());
         assertTrue(password.validate(raw));
     }
+
 }

@@ -3,6 +3,8 @@ package org.mediabump.usecases.usecases.internal.login;
 import org.mediabump.usecases.request.Request;
 import org.mediabump.usecases.request.ValidationException;
 
+import java.util.Map;
+
 public class LoginRequest implements Request {
     private final String email;
     private final String password;
@@ -10,6 +12,11 @@ public class LoginRequest implements Request {
     public LoginRequest(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+
+    public LoginRequest(Map<String, String> data) {
+        this.email = data.getOrDefault("email", "");
+        this.password = data.getOrDefault("password", "");
     }
 
     @Override

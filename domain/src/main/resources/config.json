@@ -1,0 +1,13 @@
+{
+  "db.host": "localhost",
+  "db.port": 3306,
+  "db.username": "authserveruser",
+  "db.password": "password",
+  "db.schema": "authserver",
+
+  "app.secret": "VVTFNVMqQNADQ1Z52Eo6K5hUrUMj8kVQ",
+  "app.session_cookie_secure": false,
+
+  "endpoints.login_success_redirect": "dashboard",
+  "endpoints.login_uri": "/login"
+}
