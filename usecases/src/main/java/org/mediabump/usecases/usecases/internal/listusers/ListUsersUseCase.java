@@ -1,4 +1,4 @@
-package org.mediabump.usecases.usecases.internal.getdashboard;
+package org.mediabump.usecases.usecases.internal.listusers;
 
 import org.mediabump.auth.domain.models.Session;
 import org.mediabump.auth.domain.models.User;
@@ -7,15 +7,15 @@ import org.mediabump.usecases.repository.UserRepository;
 
 import java.util.List;
 
-public class GetDashboardUseCase {
+public class ListUsersUseCase {
 
     private final UserRepository userRepository;
-    private final GetDashboardListener listener;
+    private final ListUsersListener listener;
     private final Session session;
 
-    public GetDashboardUseCase(
+    public ListUsersUseCase(
             UserRepository userRepository,
-            GetDashboardListener listener,
+            ListUsersListener listener,
             Session session) {
         this.userRepository = userRepository;
         this.listener = listener;

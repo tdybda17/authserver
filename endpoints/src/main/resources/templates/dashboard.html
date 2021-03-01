@@ -1,42 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.w3.org/1999/xhtml"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <div layout:fragment="content">
     <div class="row">
         <div class="col-lg-7">
-            <h1>Users</h1>
-        </div>
-        <div class="col-lg-5">
-            <form method="get" action="">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" name="search">
-                </div>
-            </form>
+            <h1>Dashboard</h1>
         </div>
     </div>
-    <table class="table table-striped table-hover">
-        <tr>
-            <th>id</th>
-            <th>username</th>
-            <th>email</th>
-            <th>first name</th>
-            <th>last name</th>
-            <th>joined date</th>
-            <th>last modified</th>
-        </tr>
-        <tr th:each="user: ${users}">
-            <td th:text="${user.id}"/>
-            <td th:text="${user.username}"/>
-            <td th:text="${user.email}"/>
-            <td th:text="${user.firstName}"/>
-            <td th:text="${user.lastName}"/>
-            <td th:text="${user.joinedDate}"/>
-            <td th:text="${user.lastModified}"/>
-        </tr>
-    </table>
 </div>
 </html>

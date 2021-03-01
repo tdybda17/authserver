@@ -1,5 +1,4 @@
 package org.mediabump.endpoints.endpoints.login;
-import org.mediabump.auth.domain.models.Session;
 import org.mediabump.usecases.repository.CookieRepository;
 import org.mediabump.usecases.repository.SessionRepository;
 import org.mediabump.usecases.repository.UserRepository;
@@ -42,8 +41,7 @@ public class LoginEndpoint {
     public RedirectView login(
             Model model,
             @RequestBody MultiValueMap<String, String> loginData,
-            HttpServletResponse response,
-            HttpServletRequest request) {
+            HttpServletResponse response) {
         LoginPresenter presenter = new LoginPresenter(model);
         LoginRequest _request = new LoginRequest(loginData.toSingleValueMap());
         new LoginUseCase(
